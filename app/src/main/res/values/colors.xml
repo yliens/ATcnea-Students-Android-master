@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="bg_msg_user">#2EA8E5</color>
+    <color name="bg_msg_teacher">#609</color>
+    <color name="colorPrimary">#F8971C</color>
+    <color name="colorPrimaryDark">#F57C00</color>
+    <color name="colorAccent">#C57429</color>
+    <color name="textBlack">#30302F</color>
+    <color name="material_drawer_selected_text">#536EEA</color>
+    <color name="material_drawer_dark_selected_text">#536EEA</color>
+
+    <!--Para el login-->
+    <color name="login_edited_color">#2F302F</color>
+    <color name="login_backgound_color">#E8DDC1</color>
+    <color name="login_text_hint_color">#AAABAB</color>
+    <color name="login_text_color">#C57429</color>
+
+    <color name="sds">#a2a2a2</color>
+    <color name="sdsq">#ffA8D7A7</color>
+    <color name="sdsw">#00A8D7A7</color>
+
+
+    <color name="ball1">#C57429</color>
+    <color name="ball2">#C57429</color>
+    <color name="ball3">#C57429</color>
+
+    <color name="summary_background">#606060</color>
+    <color name="summary_top_bar">#F47C20</color>
+
+    <color name="file_copy_color">#378e43</color>
+
+    <integer-array name="colors">
+        <item>@color/ball1</item>
+        <item>@color/ball2</item>
+        <item>@color/ball3</item>
+    </integer-array>
+
+
+    <array name="demo_colors">
+        <item>#FF8C00</item>
+        <item>#E81123</item>
+        <item>#EA005E</item>
+        <item>#0063B1</item>
+        <item>#107C10</item>
+        <item>#DA3B01</item>
+        <item>#FF4343</item>
+        <item>#C239B3</item>
+        <item>#00B294</item>
+        <item>#00CC6A</item>
+        <item>#00B7C3</item>
+        <item>#6B69D6</item>
+        <item>#7E735F</item>
+        <item>#69797E</item>
+        <item>#4C4A48</item>
+
+    </array>
+</resources>

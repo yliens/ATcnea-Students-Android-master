@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="135dp"
+    android:gravity="right"
+    android:orientation="horizontal"
+    android:padding="5dp"
+    android:layout_marginBottom="35dp">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"/>
+
+    <!--Contenedor de los datos-->
+    <RelativeLayout
+        android:layout_width="400dp"
+        android:layout_height="wrap_content">
+
+        <!--Contenedor de los datos-->
+        <uci.atcnea.student.utils.LinearLayoutProgress
+            android:id="@+id/file_container"
+            android:layout_width="match_parent"
+            android:background="@color/transparent"
+            android:layout_height="100dp"
+            android:layout_marginBottom="25dp"
+            android:paddingRight="10dp"
+            android:gravity="right|center_vertical"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/file_name"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="@color/login_backgound_color"
+                style="@style/TextAppearance.AppCompat.Large"
+                android:text="FILE NAME"/>
+            <TextView
+                android:id="@+id/file_dir"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="@color/login_backgound_color"
+                android:text="FILE DIR"/>
+
+        </uci.atcnea.student.utils.LinearLayoutProgress>
+
+        <!--Boton de abrir archivo-->
+        <RelativeLayout
+            android:layout_width="400dp"
+            android:layout_height="wrap_content"
+            android:layout_alignBottom="@+id/file_container"
+            android:layout_marginBottom="-25dp">
+
+            <de.hdodenhof.circleimageview.CircleImageView
+                android:id="@+id/file_open"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:layout_alignParentLeft="true"
+                android:layout_marginLeft="30dp"
+                android:src="@drawable/file_open"/>
+
+        </RelativeLayout>
+
+    </RelativeLayout>
+
+    <!--Imagen del usuario-->
+    <de.hdodenhof.circleimageview.CircleImageView
+        android:id="@+id/file_user"
+        android:layout_width="90dp"
+        android:layout_height="90dp"
+        android:layout_marginLeft="40dp"
+        android:src="@drawable/face1"/>
+
+</LinearLayout>

@@ -1,0 +1,364 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:wheel="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/quiz_background"
+    android:padding="8dp">
+
+    <!--Bloque de datos principal del cuestionario-->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <!--Contenedor del menu-->
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center_vertical"
+            android:layout_gravity="center_vertical">
+
+            <!--Datos del examen-->
+            <uci.atcnea.student.utils.LinearLayoutInfBorder
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:background="@color/transparent"
+                android:id="@+id/quiz_data_container"
+                android:layout_marginLeft="100dp"
+                android:layout_marginRight="10dp"
+                android:layout_marginTop="90dp"
+                android:paddingBottom="5dp"
+                android:orientation="horizontal">
+
+                <!--Datos principales de la pregunta-->
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_vertical"
+                    android:layout_marginLeft="20dp"
+                    android:gravity="center_vertical"
+                    android:text="@string/interactive_question_title"
+                    android:textColor="@color/md_blue_grey_900"
+                    android:textSize="40sp" />
+
+            </uci.atcnea.student.utils.LinearLayoutInfBorder>
+
+            <!--Imagen de la pregunta-->
+            <ImageView
+                android:id="@+id/ic_interactive_question"
+                android:layout_width="130dp"
+                android:layout_height="130dp"
+                android:layout_marginRight="16dp"
+                android:src="@drawable/interative_menu_image"
+                android:visibility="visible" />
+
+            <!--Tiempo del cuestionario-->
+            <RelativeLayout
+                android:layout_centerVertical="true"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:gravity="center_vertical"
+                android:layout_marginTop="5dp"
+                android:layout_alignParentRight="true">
+
+                <!--Image de fondo del tiempo-->
+                <ImageView
+                    android:id="@+id/quiz_time_background"
+                    android:layout_width="200dp"
+                    android:layout_marginTop="-3dp"
+                    android:layout_height="88dp"
+                    android:src="@drawable/quiz_time_background"
+                    android:layout_alignParentRight="true"/>
+
+                <!--Valores del tiempo-->
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentRight="true"
+                    android:layout_gravity="right"
+                    android:gravity="center_vertical|center_horizontal"
+                    android:orientation="horizontal"
+                    android:layout_marginTop="10dp"
+                    android:paddingRight="35dp">
+
+                    <TextView
+                        android:id="@+id/hours"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="00"
+                        android:textColor="@color/login_backgound_color"
+                        android:textSize="45sp" />
+
+                    <TextView
+                        android:id="@+id/hour_dots"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text=":"
+                        android:textColor="@color/login_backgound_color"
+                        android:textSize="45sp" />
+
+                    <TextView
+                        android:id="@+id/minutes"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="00"
+                        android:textColor="@color/login_backgound_color"
+                        android:textSize="45sp" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text=":"
+                        android:textColor="@color/login_backgound_color"
+                        android:textSize="45sp" />
+
+                    <TextView
+                        android:id="@+id/seconds"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="00"
+                        android:textColor="@color/login_backgound_color"
+                        android:textSize="45sp" />
+                </LinearLayout>
+
+            </RelativeLayout>
+
+        </RelativeLayout>
+
+        <LinearLayout
+            android:id="@+id/question_layout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="40dp"
+            android:orientation="vertical"
+            android:visibility="gone">
+
+            <TextView
+                android:id="@+id/tv_question"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:text="Enunciado"
+                android:textColor="@color/md_blue_grey_800"
+                android:textIsSelectable="true"
+                android:textSize="22sp" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="24dp"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="35"
+                    android:visibility="invisible" />
+
+                <ListView
+                    android:id="@+id/list_answer"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_horizontal"
+                    android:layout_marginLeft="24dp"
+                    android:layout_marginRight="24dp"
+                    android:layout_weight="30"
+                    android:divider="@android:color/transparent"
+                    android:textIsSelectable="true"
+                    tools:listitem="@android:layout/simple_list_item_single_choice" />
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="35"
+                    android:visibility="invisible" />
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/loading_layout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="40dp"
+            android:orientation="vertical"
+            android:visibility="visible">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginBottom="16dp"
+                android:layout_marginTop="16dp"
+                android:text="@string/text_wait"
+                android:textColor="@color/md_blue_grey_800"
+                android:textSize="24sp" />
+
+            <com.zl.reik.dilatingdotsprogressbar.DilatingDotsProgressBar
+                android:id="@+id/progress"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:color="@color/ball2"
+                android:radius="10dp"
+                app:dd_animationDuration="800"
+                app:dd_horizontalSpacing="30dp"
+                app:dd_numDots="5"
+                app:dd_scaleMultiplier="2.0" />
+
+            <!--<com.github.glomadrian.loadingballs.BallView-->
+            <!--android:layout_margin="30dp"-->
+            <!--android:layout_width="150dp"-->
+            <!--android:layout_height="150dp"-->
+            <!--lib:balls="3"-->
+            <!--lib:movement_cycle_time="3000"-->
+            <!--lib:enable_size_animation="true"-->
+            <!--lib:size_cycle_time="1000"-->
+            <!--lib:min_ball_size="7dp"-->
+            <!--lib:max_ball_size="15dp"-->
+            <!--lib:ball_colors="@array/colors"-->
+            <!--android:layout_gravity="center"-->
+            <!--/>-->
+
+            <!--<com.pnikosis.materialishprogress.ProgressWheel-->
+            <!--android:id="@+id/progress_wheel"-->
+            <!--android:layout_width="200dp"-->
+            <!--android:layout_height="200dp"-->
+            <!--android:layout_centerHorizontal="true"-->
+            <!--android:layout_centerVertical="true"-->
+            <!--android:layout_gravity="center"-->
+            <!--wheel:matProg_barColor="#5588FF"-->
+            <!--wheel:matProg_progressIndeterminate="true" />-->
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/question_result_layout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="40dp"
+            android:orientation="vertical"
+            android:visibility="gone">
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:orientation="vertical">
+
+                <!--<ImageView
+                    android:id="@+id/img_result"
+                    android:layout_width="132dp"
+                    android:layout_height="132dp"
+                    android:layout_gravity="center"
+                    android:layout_marginBottom="16dp"
+                    android:src="@drawable/ic_good" />-->
+
+                <TextView
+                    android:id="@+id/text_result"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:text="@string/interactive_question_result_good"
+                    android:textSize="25sp" />
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+
+    </LinearLayout>
+
+    <!--</android.support.v7.widget.CardView>-->
+
+    <RelativeLayout
+        android:id="@+id/relative_send"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentRight="true"
+        android:layout_gravity="right"
+        android:layout_marginBottom="16dp"
+        android:layout_marginRight="16dp"
+        android:visibility="visible">
+
+        <TextView
+            android:id="@+id/text"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginRight="16dp"
+            android:text="@string/send_answer"
+            android:layout_marginBottom="8dp"
+            android:layout_centerHorizontal="true"
+            android:textColor="@color/md_blue_grey_800"
+            android:textSize="24sp" />
+
+        <ImageButton
+            android:id="@+id/btn_send"
+            android:layout_width="72dp"
+            android:layout_height="72dp"
+            android:layout_below="@+id/text"
+            android:layout_centerHorizontal="true"
+            android:background="@drawable/quiz_finish_exam"
+            android:saveEnabled="false" />
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/relative_read"
+        android:layout_width="wrap_content"
+        android:layout_height="72dp"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentRight="true"
+        android:layout_gravity="right"
+        android:layout_marginBottom="16dp"
+        android:layout_marginRight="16dp"
+        android:visibility="gone">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_marginRight="16dp"
+            android:gravity="right"
+            android:lines="1"
+            android:text="@string/interactive_question_reading"
+            android:textColor="@color/md_blue_grey_800"
+            android:textSize="24sp" />
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/relative_exit"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentRight="true"
+        android:layout_gravity="right"
+        android:layout_marginBottom="16dp"
+        android:layout_marginRight="16dp"
+        android:visibility="gone">
+
+        <TextView
+            android:id="@+id/text_exit"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_marginRight="16dp"
+            android:text="@string/text_exit"
+            android:textColor="@color/md_blue_grey_800"
+            android:textSize="24sp" />
+
+        <ImageButton
+            android:id="@+id/btn_exit"
+            android:layout_width="72dp"
+            android:layout_height="72dp"
+            android:layout_toRightOf="@+id/text_exit"
+            android:background="@drawable/quiz_end_exam"
+            android:saveEnabled="false" />
+    </RelativeLayout>
+
+</RelativeLayout>

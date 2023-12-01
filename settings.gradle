@@ -1,0 +1,1 @@
+include ':app', ':libraryMenu', ':library', ':rippleview', ':randomtextview', ':commons', ':dao', ':vitamio', ':greendao-gen', ':libraryCrossfader', ':spectrum-0.6.0', ':calligraphy-2.2.0', ':dexter-3.0.0', ':android-processes-1.0.9'

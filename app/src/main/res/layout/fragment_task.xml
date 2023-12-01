@@ -1,0 +1,304 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="horizontal"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:layout_margin="20dp">
+
+    <!--Contenedor izquierdo-->
+    <LinearLayout
+        android:layout_width="400dp"
+        android:layout_height="match_parent"
+        android:layout_margin="25dp"
+        android:orientation="vertical">
+
+        <!--Menu del contenedor izquierdo-->
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:gravity="center_vertical|left"
+            android:background="@color/colorPrimary">
+
+            <TextView
+                android:text="@string/drawer_item_menu_task"
+                android:paddingLeft="20dp"
+                android:id="@+id/task_menu_title"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+
+        </RelativeLayout>
+
+        <!--Cuerpo del contenedor izquierdo-->
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1.0"
+            android:background="@color/login_backgound_color"
+            android:orientation="vertical">
+
+            <android.support.v7.widget.RecyclerView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:visibility="visible"
+                android:id="@+id/task_list"/>
+
+        </RelativeLayout>
+
+    </LinearLayout>
+
+    <!--Contenedor derecho-->
+    <LinearLayout
+        android:layout_marginBottom="25dp"
+        android:layout_marginTop="25dp"
+        android:layout_marginRight="100dp"
+        android:layout_width="match_parent"
+        android:background="@drawable/quiz_background"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <!--Menu del contenedor derecho-->
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:gravity="center_vertical|left"
+            android:background="@color/colorPrimary">
+
+            <TextView
+                android:text="@string/task_title_default"
+                android:paddingLeft="20dp"
+                android:id="@+id/task_name"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+
+        </RelativeLayout>
+
+        <ScrollView
+            android:layout_width="match_parent"
+            android:scrollbars="vertical"
+            android:layout_height="match_parent">
+
+            <!--Cuerpo de datos-->
+            <LinearLayout
+                android:visibility="gone"
+                android:layout_marginLeft="20dp"
+                android:layout_marginRight="20dp"
+                android:layout_marginTop="5dp"
+                android:layout_marginBottom="5dp"
+                android:scrollbars="vertical"
+                android:id="@+id/task_details"
+                android:orientation="vertical"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <!--Estado de la tarea (entragada)-->
+                <LinearLayout
+                    android:orientation="horizontal"
+                    android:layout_marginBottom="10dp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content">
+
+                    <TextView
+                        android:text="@string/task_status_send"
+                        android:textColor="@color/login_edited_color"
+                        android:layout_width="wrap_content"
+                        android:textSize="@dimen/task_text"
+                        android:layout_height="wrap_content" />
+                    <TextView
+                        android:id="@+id/task_status_send"
+                        android:layout_marginLeft="10dp"
+                        android:textSize="@dimen/task_text"
+                        android:textColor="@color/login_edited_color"
+                        android:text="@string/task_status_send_no_given"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content" />
+
+                </LinearLayout>
+
+                <!--Estado de la tarea (evaluada)-->
+                <LinearLayout
+                    android:orientation="horizontal"
+                    android:layout_marginBottom="10dp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content">
+
+                    <TextView
+                        android:text="@string/task_status_evaluation"
+                        android:layout_width="wrap_content"
+                        android:textSize="@dimen/task_text"
+                        android:textColor="@color/login_edited_color"
+                        android:layout_height="wrap_content" />
+                    <TextView
+                        android:id="@+id/task_status_evaluation"
+                        android:layout_marginLeft="10dp"
+                        android:textSize="@dimen/task_text"
+                        android:text="@string/task_menu_title_default"
+                        android:textColor="@color/login_edited_color"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content" />
+
+                </LinearLayout>
+
+                <!--Tipo de tarea-->
+                <LinearLayout
+                    android:orientation="horizontal"
+                    android:layout_marginBottom="10dp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content">
+
+                    <TextView
+                        android:text="@string/task_type"
+                        android:textSize="@dimen/task_text"
+                        android:layout_width="wrap_content"
+                        android:textColor="@color/login_edited_color"
+                        android:layout_height="wrap_content" />
+                    <TextView
+                        android:id="@+id/task_type"
+                        android:layout_marginLeft="10dp"
+                        android:textSize="@dimen/task_text"
+                        android:text="@string/task_type_no_group"
+                        android:layout_width="wrap_content"
+                        android:textColor="@color/login_edited_color"
+                        android:layout_height="wrap_content" />
+
+                </LinearLayout>
+
+                <!--Descripcion de la tarea-->
+                <TextView
+                    android:text="@string/task_description"
+                    android:textSize="@dimen/task_text"
+                    android:textColor="@color/login_edited_color"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" />
+
+                <WebView
+                    android:id="@+id/task_description"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="10dp"
+                    android:focusable="false"
+                    android:focusableInTouchMode="false"/>
+                <!--Descripcion de la tarea  (END) -->
+
+                <!--Adjuntos del profesor-->
+                <LinearLayout
+                    android:orientation="vertical"
+                    android:layout_width="match_parent"
+                    android:layout_marginBottom="10dp"
+                    android:layout_height="wrap_content">
+
+                    <TextView
+                        android:text="@string/task_adjunct"
+                        android:textSize="@dimen/task_text"
+                        android:id="@+id/task_adjunct_list_title"
+                        android:layout_width="wrap_content"
+                        android:textColor="@color/login_edited_color"
+                        android:layout_height="wrap_content" />
+
+                    <GridView
+                        android:id="@+id/task_adjunct_list"
+                        android:numColumns="4"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"/>
+
+                </LinearLayout>
+
+                <!--Texto de respuesta del usuario-->
+                <LinearLayout
+                    android:id="@+id/task_response_text_container"
+                    android:orientation="vertical"
+                    android:layout_marginBottom="10dp"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <TextView
+                        android:text="@string/task_response_text"
+                        android:textSize="@dimen/task_text"
+                        android:id="@+id/task_text_response"
+                        android:layout_width="wrap_content"
+                        android:textColor="@color/login_edited_color"
+                        android:layout_height="wrap_content" />
+
+                    <ScrollView
+                        android:layout_width="match_parent"
+                        android:scrollbars="vertical"
+                        android:id="@+id/task_response_text_scroll"
+                        android:layout_height="200dp">
+
+                        <EditText
+                            android:inputType="text|textMultiLine"
+                            android:id="@+id/task_response_text"
+                            android:textSize="@dimen/task_text"
+                            android:layout_width="match_parent"
+                            android:gravity="top|left"
+                            android:background="@drawable/quiz_item_backgroung"
+                            android:height="200dp"
+                            android:textColor="@color/login_edited_color"
+                            android:layout_height="wrap_content" />
+
+                    </ScrollView>
+
+                </LinearLayout>
+
+                <!--Adjuntos del estudiante-->
+                <LinearLayout
+                    android:id="@+id/task_response_resource_container"
+                    android:orientation="vertical"
+                    android:layout_marginBottom="10dp"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <TextView
+                        android:text="@string/task_response_resource"
+                        android:textSize="@dimen/task_text"
+                        android:id="@+id/task_text_add_adjunct"
+                        android:layout_width="wrap_content"
+                        android:textColor="@color/login_edited_color"
+                        android:layout_height="wrap_content" />
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:orientation="horizontal"
+                        android:gravity="center_vertical"
+                        android:layout_height="wrap_content">
+
+                        <ImageButton
+                            android:id="@+id/task_add_adjunct"
+                            android:layout_width="72dp"
+                            android:layout_height="72dp"
+                            android:layout_marginRight="20dp"
+                            android:background="@drawable/task_add_adjunct"
+                            android:saveEnabled="false" />
+                        
+                        <GridView
+                            android:id="@+id/task_adjunct_list_student"
+                            android:numColumns="3"
+                            android:layout_width="match_parent"
+                            android:layout_height="90dp"/>
+
+                    </LinearLayout>
+
+                </LinearLayout>
+
+                <!--Boton para enviar la tarea-->
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <ImageButton
+                        android:id="@+id/task_send"
+                        android:layout_width="72dp"
+                        android:layout_height="72dp"
+                        android:layout_alignParentRight="true"
+                        android:layout_marginRight="30dp"
+                        android:background="@drawable/quiz_finish_exam"
+                        android:saveEnabled="false" />
+
+                </RelativeLayout>
+
+            </LinearLayout>
+
+        </ScrollView>
+
+    </LinearLayout>
+
+</LinearLayout>

@@ -1,0 +1,268 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="16dp">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/transparent"
+        android:orientation="vertical">
+
+        <!--Para orientacion del cuestionario-->
+        <LinearLayout
+            android:id="@+id/quiz_orientation"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/transparent"
+            android:orientation="vertical"
+            android:visibility="gone">
+
+            <!--Orientacion del cuestionario-->
+            <WebView
+                android:id="@+id/quiz_description_webview"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:focusable="false"
+                android:focusableInTouchMode="false"/>
+
+        </LinearLayout>
+
+        <!--Multiple choice-->
+        <LinearLayout
+            android:id="@+id/multiple_choice_layout"
+            android:background="@drawable/quiz_item_backgroung"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:visibility="gone">
+
+            <TextView
+                android:id="@+id/tv_question_mc"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="10dp"
+                android:layout_marginTop="10dp"
+                android:text="Question11"
+                android:textColor="@color/cardview_dark_background"
+                android:textIsSelectable="true"
+                android:textSize="18sp" />
+
+            <WebView
+                android:id="@+id/tv_orientation_mc"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:focusable="false"
+                android:focusableInTouchMode="false"/>
+
+            <ListView
+                android:id="@+id/list_answer_mc"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="10dp"
+                android:textIsSelectable="true"
+                tools:listitem="@android:layout/simple_list_item_multiple_choice" />
+
+            <WebView
+                android:id="@+id/simple_list_item_multiple_text"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:focusable="false"
+                android:focusableInTouchMode="false"/>
+
+        </LinearLayout>
+
+        <!--Simple choice-->
+        <LinearLayout
+            android:id="@+id/simple_choice_layout"
+            android:background="@drawable/quiz_item_backgroung"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:visibility="gone">
+
+            <TextView
+                android:id="@+id/tv_question_sc"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="10dp"
+                android:layout_marginTop="10dp"
+                android:text="Question22"
+                android:textColor="@color/cardview_dark_background"
+                android:textIsSelectable="true"
+                android:textSize="18sp" />
+
+
+            <WebView
+                android:id="@+id/tv_orientation_sc"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:focusable="false"
+                android:focusableInTouchMode="false"/>
+
+            <ListView
+                android:id="@+id/list_answer_sc"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="10dp"
+                android:textIsSelectable="true"
+                tools:listitem="@android:layout/simple_list_item_single_choice" />
+
+            <WebView
+                android:id="@+id/simple_list_item_single_text"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:focusable="false"
+                android:focusableInTouchMode="false"/>
+
+        </LinearLayout>
+
+        <!--True false-->
+        <LinearLayout
+            android:id="@+id/true_false_layout"
+            android:background="@drawable/quiz_item_backgroung"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:visibility="gone">
+
+            <TextView
+                android:id="@+id/tv_question_tf"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="10dp"
+                android:layout_marginTop="10dp"
+                android:text="Question33"
+                android:textColor="@color/cardview_dark_background"
+                android:textIsSelectable="true"
+                android:textSize="18sp" />
+
+            <WebView
+                android:id="@+id/tv_orientation_tf"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:focusable="false"
+                android:focusableInTouchMode="false"/>
+
+            <ListView
+                android:id="@+id/list_answer_tf"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="10dp"
+                android:textIsSelectable="true"
+                tools:listitem="@android:layout/simple_list_item_single_choice" />
+
+            <WebView
+                android:id="@+id/list_answer_text"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:focusable="false"
+                android:focusableInTouchMode="false"/>
+
+        </LinearLayout>
+
+        <!--Simple numeric-->
+        <LinearLayout
+            android:id="@+id/simple_numeric_layout"
+            android:background="@drawable/quiz_item_backgroung"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:visibility="gone">
+
+            <TextView
+                android:id="@+id/tv_question_sn"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="10dp"
+                android:layout_marginTop="10dp"
+                android:text="Question44"
+                android:textColor="@color/cardview_dark_background"
+                android:textIsSelectable="true"
+                android:textSize="18sp" />
+
+            <WebView
+                android:id="@+id/tv_orientation_sn"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:focusable="false"
+                android:focusableInTouchMode="false"/>
+
+            <EditText
+                android:id="@+id/number_answer_sn"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:ems="10"
+                android:inputType="number" />
+
+            <WebView
+                android:id="@+id/number_answer_text"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:focusable="false"
+                android:focusableInTouchMode="false"/>
+
+        </LinearLayout>
+
+        <!--Column link-->
+        <LinearLayout
+            android:id="@+id/column_link_layout"
+            android:background="@drawable/quiz_item_backgroung"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:visibility="visible">
+
+            <TextView
+                android:id="@+id/tv_question_cl"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="10dp"
+                android:layout_marginTop="10dp"
+                android:text="Question55"
+                android:textColor="@color/cardview_dark_background"
+                android:textIsSelectable="true"
+                android:textSize="18sp" />
+
+            <WebView
+                android:id="@+id/tv_orientation_cl"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:focusable="false"
+                android:focusableInTouchMode="false"/>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <uci.atcnea.student.utils.ConnectPatternView
+                    android:id="@+id/connect"
+                    android:padding="0dp"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:minHeight="100dp"
+                    android:layout_centerVertical="true"
+                    android:layout_centerHorizontal="true"
+                    app:connectPatternCircleColor="@color/colorPrimaryDark"
+                    app:connectPatternLineColor="@color/colorPrimary"
+                    app:connectPatternCircleRadius="14dp"
+                    app:connectPatternLineWidth="7dp"/>
+
+                <WebView
+                    android:id="@+id/connect_text"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:focusable="false"
+                    android:focusableInTouchMode="false"/>
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+    </LinearLayout>
+    <!--</android.support.v7.widget.CardView>-->
+</LinearLayout>

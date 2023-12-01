@@ -1,0 +1,45 @@
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <!--Para lista de estudiantes-->
+    <item
+        android:id="@+id/menu_search_user"
+        android:orderInCategory="1"
+        android:title="Search user"
+        app:showAsAction="ifRoom|collapseActionView"
+        app:actionViewClass="android.support.v7.widget.SearchView"
+        />
+    <item
+        android:id="@+id/menu_new_user"
+        android:orderInCategory="2"
+        android:title="Add user"
+        app:showAsAction="always"/>
+    <item
+        android:id="@+id/menu_help"
+        android:orderInCategory="3"
+        android:title="Help"
+        app:showAsAction="always"/>
+    <item
+        android:id="@+id/menu_config"
+        android:orderInCategory="4"
+        android:icon="@drawable/ic_app_android_general_settings"
+        android:title="Config"
+        app:showAsAction="always"/>
+
+    <!--Para desconectar estudiante-->
+    <item
+        android:id="@+id/menu_user_disconnect"
+        android:orderInCategory="0"
+        android:icon="@drawable/app_android_general_logout"
+        android:title="User disconnect"
+        app:showAsAction="always"/>
+
+    <!--Para main activity-->
+    <item
+        android:id="@+id/menu_1"
+        android:orderInCategory="1"
+        android:icon="@drawable/app_android_general_slide"
+        android:title="Toggle Side Panel"
+        app:showAsAction="always" />
+
+</menu>
