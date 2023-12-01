@@ -1,4 +1,5 @@
-# 1. Project guidelines
+# 1. Project guidelines 
+Yordanis Liens Cabrera, grupo 401
 
 ## 1.1 Project structure
 
